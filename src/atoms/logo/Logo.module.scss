@@ -1,0 +1,28 @@
+@import '../../styles/variable.scss';
+
+.logo {
+  width: 130px;
+  height: 80px; 
+  fill: none;
+}
+
+@media (max-width: $w1360) {
+  .logo {
+    width: 96px;
+    height: 56px; 
+  }
+}
+
+@media (max-width: $w768) {
+  .logo {
+    width: 78.32px;
+    height: 48px; 
+  }
+}
+
+@media (max-width: $w360) {
+  .logo {
+    width: 62px;
+    height: 38px; 
+  }
+}

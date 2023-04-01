@@ -1,0 +1,20 @@
+@import '../../styles/variable.scss';
+
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.wrapper > input,
+.wrapper > input:focus-visible {
+  border: none;
+  background: transparent;
+  outline: none;
+  text-align: end;
+}
+
+@media (max-width: $w360) {
+  .wrapper > input {
+    display: none;
+  }
+}
