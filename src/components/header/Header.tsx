@@ -1,3 +1,4 @@
+import { useRef } from 'react'
 import cx from 'classnames'
 
 import styles from './Header.module.scss'
@@ -11,11 +12,16 @@ import { Cart } from '@/atoms/cart/Cart'
 import { Burger } from '@/atoms/burger/Burger'
 import { Search } from '@/atoms/search/Search'
 
-export const Header = () => {
+export const Header = ({
+  onClickBurger,
+}: {
+  onClickBurger: () => void,
+}) => {
 
   const names = ['Женщины', 'Мужчины', 'Молодежь', 'Бренды']
 
   return <header
+    key='headerRender'
     className={cx(
     styles.header,
     interTight.className
@@ -55,7 +61,11 @@ export const Header = () => {
           <Search />
           <Favorite.FavoriteDark />
           <Cart />
-          <Burger />
+          <Burger
+            onClick={() => {
+              onClickBurger()
+            }}
+          />
         </div>
         <Button className={styles.helpBtn}><span>Помощь</span></Button>
       </div>
