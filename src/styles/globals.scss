@@ -4,6 +4,10 @@
 
 }
 
+// the root element inside <body>
+#__next {
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -13,6 +17,10 @@ main,
 header,
 footer {
   padding: 0 42px;
+}
+
+main {
+  
 }
 
 @media (max-width: $w1360) {
