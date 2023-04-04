@@ -1,6 +1,43 @@
 .home {
-  
+  // height: 960px;
+  height: 100vh;
+
+  background-color: red;
 }
+
+.slide {
+  height: 100%;
+  background-color: green;
+
+}
+
+.firstSlide {
+  opacity: 0.5;
+  transition: opacity 1s;
+}
+
+.swiperHome {
+  position: relative;
+  top: 0px;
+  // height: 100vh;
+  outline: 2px solid red;
+}
+
+// FIXME: rewrite styles
+.swiperSlide1 {
+  background-color: red;
+  height: 120% !important;
+}
+
+.swiperSlide {
+  background-color: green;
+  height: 80% !important;
+} 
+
+.swiperSlide2 {
+  background-color: gray;
+} 
+
 
 // .main {
 //   display: flex;

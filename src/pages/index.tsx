@@ -1,8 +1,68 @@
+import { useRef } from 'react'
+import { Swiper, SwiperSlide } from "swiper/react"
+import cx from 'classnames'
+
+import SwiperCore, { Autoplay, Mousewheel, Pagination } from "swiper"
+
+import styles from '../styles/Home.module.scss'
+
+import 'swiper/css';
+// import 'swiper/css/pagination';
+
 export default function Home() {
+
+  SwiperCore.use([Autoplay, Mousewheel, Pagination])
+  
+  // FIXME: for test instead of swiper
+  // const refSlide = useRef<HTMLDivElement | null>(null)
+  // const discrerWheel = useRef<EventTarget | null>(null)
+  // const directionWheel = useRef<number>(0)
+  // const scrollHandler = (e: WheelEvent) => {
+  //   console.log("Scroll - ", e)
+  //   // deltaY > 0 скролл вниз, иначе вверх
+  //   if (discrerWheel.current !== e.target 
+  //     || (directionWheel.current < 0 && e.deltaY > 0)
+  //     || (directionWheel.current > 0 && e.deltaY < 0)
+  //     ) {
+  //     discrerWheel.current = e.target
+  //     directionWheel.current = e.deltaY
+  //     refSlide.current?.classList.toggle(styles.firstSlide)
+  //   } else {
+  //     directionWheel.current = e.deltaY
+  //     discrerWheel.current = e.target
+  //   }
+    
+  // }
+
   return <>
-    <div>
-      Home
-    </div>
+    {/* <div className={styles.home} >
+      <div
+        ref={refSlide}
+        className={cx(
+          styles.slide,
+        )}
+        onWheel={(e) => {
+          console.log(e)
+          scrollHandler(e)
+        }}
+      >
+      </div> */}
+      <Swiper
+        direction="vertical"
+        pagination={{
+          clickable: true,
+        }}
+        speed={1000}
+        mousewheel={true}
+        // slidesPerView={0.8}
+        slidesPerView={"auto"}
+        className={styles.swiperHome}
+      >
+        <SwiperSlide className={styles.swiperSlide1}>Slide 1</SwiperSlide>
+        <SwiperSlide className={styles.swiperSlide2}>Slide 2</SwiperSlide>
+        <SwiperSlide className={styles.swiperSlide}>Slide 3</SwiperSlide>
+        <SwiperSlide className={styles.swiperSlide2}>Slide 4</SwiperSlide>
+      </Swiper>
   </>
 }
 
